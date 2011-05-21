@@ -39,6 +39,7 @@ void setState(BOOL Enable)
 	BOOL RemoveHistory = YES;
 	BOOL RemoveTabs = YES;
 	BOOL KillEverCookies = YES;
+    BOOL OptOutCookies = YES;
 
 	if (plistDict != NULL)
 	{
@@ -46,6 +47,7 @@ void setState(BOOL Enable)
 	 	RemoveHistory = [[plistDict objectForKey:@"RemoveHistory"] boolValue];
 	 	RemoveTabs = [[plistDict objectForKey:@"RemoveTabs"] boolValue];
 	 	KillEverCookies = [[plistDict objectForKey:@"KillEverCookies"] boolValue];
+        OptOutCookies = [[plistDict objectForKey:@"OptOutCookies"] boolValue];
 	}
 	
 	//write the options to a temp param file to be consumed by the shell-script
@@ -60,6 +62,8 @@ void setState(BOOL Enable)
 			fwrite( "RemoveTabs\n",11,1,fp );
 		if (KillEverCookies)
 			fwrite( "KillEverCookies\n",16,1,fp );
+        if (OptOutCookies)
+            fwrite( "OptOutCookies\n", 18,1,fp );
 		
 		fclose(fp);
 	}

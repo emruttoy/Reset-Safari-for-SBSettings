@@ -16,6 +16,9 @@ for f in `cat /tmp/resetsafari.param `; do
 	elif [ $f == "RemoveTabs" ];  then 
 		echo "Clearing MobileSafari tabs" >> $OUTFILE
 		rm -rf /private/var/mobile/Library/Safari/SuspendState.plist
+		
+	elif [ $f == "OptOutCookies" ]; then
+		echo "Adding OptOut cookies to MobileSafari" >> $OUTFILE
 
 	elif [ $f == "KillEverCookies" ];  then 
 		echo "Killing ever cookies" >> $OUTFILE
