@@ -63,7 +63,7 @@ void setState(BOOL Enable)
 		if (KillEverCookies)
 			fwrite( "KillEverCookies\n",16,1,fp );
         if (OptOutCookies)
-            fwrite( "OptOutCookies\n", 18,1,fp );
+            fwrite( "OptOutCookies\n", 14,1,fp );
 		
 		fclose(fp);
 	}
