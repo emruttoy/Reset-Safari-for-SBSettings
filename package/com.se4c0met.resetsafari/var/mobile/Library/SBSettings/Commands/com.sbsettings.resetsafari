@@ -19,6 +19,7 @@ for f in `cat /tmp/resetsafari.param `; do
 		
 	elif [ $f == "OptOutCookies" ]; then
 		echo "Adding OptOut cookies to MobileSafari" >> $OUTFILE
+		cp /x/ /var/mobile/Library/Cookies/
 
 	elif [ $f == "KillEverCookies" ];  then 
 		echo "Killing ever cookies" >> $OUTFILE
